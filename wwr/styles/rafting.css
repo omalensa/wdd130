@@ -1,0 +1,176 @@
+:root {
+    --primary-color: #0b3c5d;
+    --secondary-color: #328cc1;
+    --accent1-color: #d9b310;
+    --accent2-color: #1d2731;
+    --heading-font: Georgia, serif;
+    --body-font: Arial, sans-serif;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: var(--body-font);
+    color: var(--accent2-color);
+}
+
+/* LAYOUT WIDTH */
+header,
+main,
+footer {
+    width: 840px;
+    margin: 0 auto;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+}
+
+/* NAV */
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* HEADINGS - general */
+h1,
+h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+}
+
+/* SPACING */
+nav,
+p,
+section,
+article {
+    margin: 16px;
+    padding: 8px;
+}
+
+/* ── HERO ─────────────────────────────────────── */
+.hero {
+    position: relative;
+}
+
+/* Hero background image fills full width */
+.hero > img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Hero title overlay */
+.hero h1 {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    /* override the h1,h2 primary-color rule */
+    font-family: var(--heading-font);
+}
+
+/* Hero article overlay */
+.hero article {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 12px;
+    margin: 0;
+    /* remove the generic article margin inside hero */
+
+    /* clearfix so the container wraps the floated image */
+    overflow: hidden;
+}
+
+/* Floated image inside hero article – properly contained */
+.hero article img {
+    float: right;
+    width: 125px;
+    margin: 0 0 8px 12px;
+    /* space between image and text only on left/bottom */
+}
+
+/* Hero article paragraph */
+.hero article p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+/* ── HISTORY & ADVENTURE SECTIONS ────────────── */
+section {
+    background-color: #f0f7fc;
+    /* soft blue tint, distinct from hero */
+    border-left: 4px solid var(--secondary-color);
+    border-radius: 4px;
+    margin: 20px 16px;
+    padding: 16px 20px;
+}
+
+section h2 {
+    color: var(--primary-color);
+    font-family: var(--heading-font);
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    border-bottom: 2px solid var(--accent1-color);
+    /* gold underline accent */
+    padding-bottom: 6px;
+}
+
+section p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    color: var(--accent2-color);
+}
+
+/* ── FOOTER ───────────────────────────────────── */
+footer {
+    text-align: center;
+    padding: 16px 10px;
+    background-color: var(--primary-color);
+    color: white;
+    margin-top: 24px;
+}
+
+footer p {
+    margin-bottom: 8px;
+    color: white;
+}
+
+/* SOCIAL MEDIA */
+.socialmedia a {
+    text-decoration: none;
+}
+
+.socialmedia img {
+    margin: 5px;
+    vertical-align: middle;
+}
