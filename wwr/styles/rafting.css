@@ -174,3 +174,114 @@ footer p {
     margin: 5px;
     vertical-align: middle;
 }
+
+/* ===================== CONTACT PAGE ===================== */
+
+.contact-info,
+.team,
+.contact-form {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 40px;
+}
+
+.contact-info h2,
+.team h2,
+.contact-form h2 {
+    background-color: var(--primary);
+    color: white;
+    padding: 18px;
+    text-align: center;
+    font-size: 1.9rem;
+    border-radius: 6px;
+    margin-bottom: 25px;
+}
+
+/* Info + Map Grid */
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.info-grid p {
+    margin-bottom: 18px;
+    font-size: 1.1rem;
+}
+
+/* Team Grid */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.team figure img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.team figcaption {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.05rem;
+}
+
+/* Contact Form */
+.contact-form form {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.radio-group label {
+    font-weight: normal;
+}
+
+.checkbox-label {
+    font-weight: normal !important;
+    margin-top: 10px;
+}
+
+.submit-btn {
+    background-color: var(--accent);
+    color: white;
+    padding: 14px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+    align-self: flex-start;
+}
+
+.submit-btn:hover {
+    background-color: #1e40af;
+}
