@@ -1,178 +1,196 @@
 :root {
-    --primary-color: #0b3c5d;
-    --secondary-color: #328cc1;
-    --accent1-color: #d9b310;
-    --accent2-color: #1d2731;
-    --heading-font: Georgia, serif;
-    --body-font: Arial, sans-serif;
+    --primary: #0c2a5e;
+    --accent: #1e40af;
 }
 
-/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* BODY */
 body {
-    font-family: var(--body-font);
-    color: var(--accent2-color);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333;
 }
 
-/* LAYOUT WIDTH */
-header,
-main,
-footer {
-    width: 840px;
+/* ===================== HEADER - CSS GRID ===================== */
+header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 40px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-/* HEADER */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 10px;
+.logo {
+    height: 85px;
 }
 
-/* NAV */
-nav ul {
+nav {
     display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin: 10px;
+    justify-content: flex-end;
+    gap: 30px;
 }
 
 nav a {
-    color: white;
     text-decoration: none;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 1.1rem;
 }
 
-/* HEADINGS - general */
-h1,
-h2 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
+nav a:hover {
+    color: #2563eb;
 }
 
-/* SPACING */
-nav,
-p,
-section,
-article {
-    margin: 16px;
-    padding: 8px;
-}
-
-/* ── HERO ─────────────────────────────────────── */
+/* ===================== HERO ===================== */
 .hero {
     position: relative;
-}
-
-/* Hero background image fills full width */
-.hero > img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-/* Hero title overlay */
-.hero h1 {
-    position: absolute;
-    top: 20px;
-    width: 100%;
-    padding: 16px;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    /* override the h1,h2 primary-color rule */
-    font-family: var(--heading-font);
-}
-
-/* Hero article overlay */
-.hero article {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 12px;
-    margin: 0;
-    /* remove the generic article margin inside hero */
-
-    /* clearfix so the container wraps the floated image */
+    max-width: 1200px;
+    margin: 20px auto;
+    border-radius: 8px;
     overflow: hidden;
+    min-height: 520px;
 }
 
-/* Floated image inside hero article – properly contained */
-.hero article img {
-    float: right;
-    width: 125px;
-    margin: 0 0 8px 12px;
-    /* space between image and text only on left/bottom */
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
-/* Hero article paragraph */
-.hero article p {
+.hero-overlay {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(12, 42, 94, 0.9);
+    color: white;
+    padding: 18px 80px;
+    border-radius: 8px;
+    z-index: 2;
+}
+
+.hero-overlay h1 {
+    font-size: 2.6rem;
     margin: 0;
-    padding: 0;
-    line-height: 1.5;
+    white-space: nowrap;
 }
 
-/* ── HISTORY & ADVENTURE SECTIONS ────────────── */
-section {
-    background-color: #f0f7fc;
-    /* soft blue tint, distinct from hero */
-    border-left: 4px solid var(--secondary-color);
-    border-radius: 4px;
-    margin: 20px 16px;
-    padding: 16px 20px;
+.mission-box {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    right: 50px;
+    background-color: rgba(12, 42, 94, 0.92);
+    color: white;
+    padding: 28px 35px;
+    border-radius: 8px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    z-index: 2;
 }
 
-section h2 {
-    color: var(--primary-color);
-    font-family: var(--heading-font);
-    margin-bottom: 10px;
-    font-size: 1.4rem;
-    border-bottom: 2px solid var(--accent1-color);
-    /* gold underline accent */
-    padding-bottom: 6px;
+.mission-box p {
+    flex: 1;
 }
 
-section p {
-    margin: 0;
-    padding: 0;
-    line-height: 1.7;
-    color: var(--accent2-color);
+.mission-box img {
+    width: 260px;
+    border-radius: 6px;
 }
 
-/* ── FOOTER ───────────────────────────────────── */
-footer {
+/* ===================== HISTORY ===================== */
+.history {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 40px;
+}
+
+.history h2 {
+    background-color: var(--primary);
+    color: white;
+    padding: 18px;
     text-align: center;
-    padding: 16px 10px;
-    background-color: var(--primary-color);
-    color: white;
-    margin-top: 24px;
+    font-size: 1.9rem;
+    border-radius: 6px;
+    margin-bottom: 20px;
 }
 
-footer p {
-    margin-bottom: 8px;
-    color: white;
+/* ===================== ADVENTURE GALLERY - W04 ===================== */
+.adventure {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 40px;
 }
 
-/* SOCIAL MEDIA */
-.socialmedia a {
-    text-decoration: none;
+.adventure h2 {
+    background-color: var(--primary);
+    color: white;
+    padding: 18px;
+    text-align: center;
+    font-size: 1.9rem;
+    border-radius: 6px;
+    margin-bottom: 25px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+figure {
+    margin: 0;
+    text-align: center;
+}
+
+figure img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+figcaption {
+    margin-top: 8px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+/* ===================== FOOTER ===================== */
+footer {
+    max-width: 1200px;
+    margin: 60px auto 30px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #ddd;
+    padding-top: 20px;
+}
+
+.socialmedia {
+    display: flex;
+    gap: 15px;
 }
 
 .socialmedia img {
-    margin: 5px;
-    vertical-align: middle;
+    height: 48px;
+    transition: transform 0.3s;
+}
+
+.socialmedia img:hover {
+    transform: scale(1.15);
 }
 
 /* ===================== CONTACT PAGE ===================== */
@@ -292,4 +310,138 @@ footer p {
     height: 320px;
     border-radius: 8px;
     border: none;
+}
+
+/* ===================== HOME PAGE ===================== */
+.home-hero {
+    min-height: 600px;
+}
+
+.home-hero .hero-overlay h1 {
+    font-size: 3rem;
+    padding: 20px 60px;
+}
+
+.cta {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f8fafc;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: white;
+    padding: 16px 32px;
+    font-size: 1.3rem;
+    text-decoration: none;
+    border-radius: 8px;
+    margin: 15px;
+}
+
+.btn:hover {
+    background-color: #1e40af;
+}
+
+.newsletter {
+    max-width: 700px;
+    margin: 40px auto;
+    text-align: center;
+    padding: 30px;
+    background-color: #f1f5f9;
+    border-radius: 10px;
+}
+
+.newsletter form {
+    display: flex;
+    gap: 10px;
+    max-width: 500px;
+    margin: 20px auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.newsletter input {
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    flex: 1;
+    min-width: 220px;
+}
+
+/* Grid */
+.home-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 40px;
+}
+
+.grid-item {
+    text-align: center;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ===================== TRIPS PAGE ===================== */
+.trip-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 40px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card h3 {
+    padding: 15px 20px 5px;
+    color: var(--primary);
+}
+
+.card p {
+    padding: 0 20px;
+}
+
+.table-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 40px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--primary);
+    color: white;
 }
